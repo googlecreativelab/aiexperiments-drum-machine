@@ -5,7 +5,7 @@ THE INFINITE DRUM MACHINE
 
 ## Installation
 
-Original audio and tsne data are not provided. Please visit [AudioNotebooks](https://github.com/kylemcdonald/AudioNotebooks) to generate tsne data.
+Original audio and tsne data are not provided. Please visit Kyle McDonald's [AudioNotebooks](https://github.com/kylemcdonald/AudioNotebooks) repo to generate tsne data.
 
 Data must be formatted to run splitter.py. Data files will be generated in output/meta/ as json. See sample.json for reference. Audio files will be generated in output/audio as concatenated mp3 files. Both mp3 and json files are named according to load, "aka chunk" order.
 
