@@ -1,0 +1,67 @@
+#controller > .nav > .sequencer > .container {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width:calc(100% - 40px);
+	height:calc(100% - 20px);
+	margin: 10px;
+	padding: 0px;
+	min-width: 360px;
+
+	.Track {
+		width: 100%;
+		height: 25%;
+		position: relative;
+
+		.Cell {
+			width: percentage(1 / 16);
+			height: 100%;
+			position: relative;
+			float: left;
+			cursor: pointer;
+			pointer-events: auto;
+			
+			$offSize : 6px;
+			$onSize : 12px;
+
+			#Fill {
+				width: $offSize;
+				height: $offSize;
+				left: 50%;
+				top: 50%;
+				position: relative;
+				background-color: #aaa;
+				border-radius: 50%;
+				transform: scale(1) translateX(-50%) translateY(-50%);
+				transition: transform 0.2s;
+				opacity: 0.5;
+			}
+
+			&.Active #Fill {
+				width: $onSize;
+				height: $onSize;
+				left: 50%;
+				top: 50%;
+				transform: scale(1) translateX(-50%) translateY(-50%);
+				background-color: green;
+				opacity: 1;
+			}
+
+			&.Active.Trigger #Fill {
+				left: 50%;
+				top: 50%;
+				transform: scale(1.6) translateX(-32%) translateY(-32%);
+				transition: transform 0.05s;
+			}
+		}
+	}
+
+	#Line {
+		width: 1px;
+		height: 100%;
+		background-color: red;
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+}

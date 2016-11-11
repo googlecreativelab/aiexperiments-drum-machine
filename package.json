@@ -1,0 +1,38 @@
+{
+  "name": "drums",
+  "version": "1.0.0",
+  "description": "The Infinite Drum Machine",
+  "main": "build/Main.js",
+  "license": "CC0-1.0",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googlecreativelab/aiexperiments-drum-machine"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "domready": "^1.0.8",
+    "jshint": "^2.9.1",
+    "jshint-loader": "^0.8.3",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.0",
+    "tone": "^0.8.0",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "exports-loader": "^0.6.3",
+    "imports-loader": "^0.6.5",
+    "perlin-simplex": "0.0.2",
+    "rtree": "^1.4.2",
+    "stats.js": "^0.16.0",
+    "three": "^0.75.0",
+    "tone": "^0.7.1",
+    "tween.js": "^16.3.4"
+  }
+}

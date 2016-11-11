@@ -1,0 +1,32 @@
+@import "responsiveFont";
+
+#info {
+	display:none;
+	opacity: .99;
+}
+#info.show {
+	display:block;
+}
+.label {
+	position: absolute;
+  	opacity: .99;
+	visibility:hidden;
+	font-family: 'Roboto Mono', sans-serif;
+	letter-spacing: 1px;
+	background-color: rgba(15, 15, 15, 0.8);
+	@include responsiveFont(2.8vw, 12px, 14px, 14px);
+}
+
+.label.show {
+	visibility:visible;
+}
+.label > .title {
+	color: #FFF;
+	vertical-align: middle;
+	white-space: nowrap;
+	cursor: pointer;
+	padding : 10px;
+}
+.label > .title:hover {
+	text-decoration: underline;
+}

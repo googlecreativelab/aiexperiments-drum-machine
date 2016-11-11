@@ -1,0 +1,42 @@
+$mediumColor: #2d2b3f;
+$desktop_margin: 10px;
+$desktop_zoomWidth: 50px;
+$desktop_height: 100px;
+$mediaTabletLandscape:1150px;
+
+#controller > #zoom {
+	flex-direction:column;
+	justify-content: space-between;
+}
+
+#zoom > button {
+	width:50px;
+	height:49px;
+	border:none;
+}
+#zoom > #plusIcon {
+	background: url(/img/plus.svg);
+	background-color:$mediumColor;
+}
+
+#zoom > #minusIcon {
+	background: url(/img/minus.svg);
+	background-color:$mediumColor;
+}
+
+@media all {
+	#controller > #zoom {
+		height:$desktop_height;
+		width:$desktop_zoomWidth;
+		float: right;
+		margin: $desktop_margin;
+		padding: 0px;
+		display: flex;
+	}
+}
+
+@media (max-width:$mediaTabletLandscape) {
+	#controller > #zoom {
+		display: none;
+	}
+}

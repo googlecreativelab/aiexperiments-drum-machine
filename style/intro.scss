@@ -1,0 +1,167 @@
+@import "responsiveFont";
+
+#intro {
+	display:block;
+}
+#intro.hide {
+	display:none;
+}
+
+#introBlock {
+	position: absolute;
+	top:50%;
+	left: 50%;
+	color:#e8e6f2;
+	font-family: 'Roboto Mono', sans-serif;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+	width: 450px;
+}
+
+#introBlock > .header {
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	font-size:22px;
+	padding: 0px;
+}
+#introBlock > p {
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0px;
+	line-height: 180%;
+	font-size:14px;
+	margin: 0;
+	padding: 30px 50px;
+}
+
+@media (max-width:720px) { 
+	#introBlock > .header {
+		padding: 0px 110px;
+	}
+	#introBlock > p {
+		padding: 30px 100px;
+	}
+}
+
+#introBlock > .startLink {
+	visibility:hidden;
+	display: inline-block;
+	cursor: default;
+	line-height: 22px;
+	white-space: nowrap;
+	background-color:rgba(15, 15, 15, 0.75);
+	cursor: pointer;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	font-size:14px;
+	letter-spacing: 1px;
+
+	padding: 10px 20px 10px 20px;
+	color: #29c4c5;
+	border: 1px solid #29c4c5;
+}
+
+#introBlock > .startLink.show {
+	visibility:visible;
+}
+
+
+#introBlock > .aboutLink {
+	visibility:hidden;
+	color:#29c4c5;
+	display: inline-block;
+	font-weight:400;
+	letter-spacing: 2px;
+	font-size:12px;
+	padding-top:20px;
+	padding-bottom:3px;
+	border-bottom: 1px solid #29c4c5;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#introBlock > .aboutLink.show {
+	visibility:visible;
+}
+
+
+#legal {
+	opacity: 0.5;
+	position:absolute;
+	right: 20px;
+	bottom: 21px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	color: #FFF;
+}
+a{
+	text-decoration: none;
+	color: #FFF;
+}
+
+
+#badges {
+	opacity: 0.5;
+	position:absolute;
+	display: flex;
+	left: 10px;
+	bottom: 20px;
+}
+
+#badges > .badgeAI {
+	background-image: url("/img/badgeAI_master.svg");
+	background-repeat: no-repeat;
+}
+
+#badges > .pipe {
+	border-right: 1px solid rgba(255,255,255,0.75);
+}
+
+#badges > .badgeFriends {
+	background-image: url("/img/badgeFriends_master.svg");
+	background-repeat: no-repeat;
+}
+
+/* desktop */
+@media all {
+	#badges > .badgeAI {
+		width: 110px;
+		height: 60px;
+		margin-left:20px;
+		margin-right:20px;
+	}
+
+	#badges > .pipe {
+		border-right: 1px solid rgba(255,255,255,0.75);
+	}
+
+	#badges > .badgeFriends {
+		width: 110px;
+		height: 60px;
+		margin-left:20px;
+		margin-right:20px;
+	}
+}
+
+/* phones */
+@media (max-width:380px) { 
+	#badges > .badgeAI {
+		width: 73px;
+		height: 40px;
+		margin-left:20px;
+		margin-right:20px;
+	}
+
+	#badges > .pipe {
+		border-right: 1px solid rgba(255,255,255,0.75);
+	}
+
+	#badges > .badgeFriends {
+		width: 73px;
+		height: 40px;
+		margin-left:20px;
+		margin-right:20px;
+	}
+}
+

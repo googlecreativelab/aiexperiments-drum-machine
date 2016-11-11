@@ -1,0 +1,164 @@
+@import "responsiveFont";
+
+$margin:20px;
+$doubleMargin:$margin+$margin;
+
+// color
+$lightColor: #c2bfd9;
+$lightMediumColor: #3f3d52;
+$mediumColor: #2d2b3f;
+$mediumDarkColor: #262536;
+$darkColor: #1c1b28;
+
+#filter {
+	display:none;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(15, 15, 15, 0.8);
+}
+	
+
+#filter > .input-wrapper {
+	position: relative;
+	margin:$margin;
+	width:calc(100% - #{$doubleMargin});
+	height:80px;
+	border: 1px solid #666;
+	background-color:rgba(15, 15, 15, 0.8);
+	border-radius: 2pt;
+}
+
+// input field added though Filter.js to prevent visual bugs
+#filter > .input-wrapper > input[type=text] {
+	position: relative;
+	left:80px; 
+	top:50%;
+	transform: translateY(-50%); 
+	width:calc(100% - 20px - 80px - 40px);
+
+	color: #FFF;
+	text-transform:uppercase;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 100; 
+	@include responsiveFont(4vw, 20px, 30px, 30px);
+
+	appearance:none;
+	background-color:rgba(0, 0, 0, 0.0);
+	outline: none;
+	border: none;
+
+}
+
+input::-webkit-input-placeholder {
+	color: #616072;
+}
+input:-moz-placeholder { /* Firefox 18- */
+	color: #616072;
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+	color: #616072;
+}
+input:-ms-input-placeholder {  
+	color: #616072;
+}
+
+
+#filter > .searchButton {
+	position: absolute;
+	width:80px;
+	height:80px;
+	top:$margin;
+	left:$margin;
+	cursor: pointer;
+	background: url(/img/search_large.svg) no-repeat scroll 0px 0px;
+
+}
+
+#filter > .clearButton {
+	position: absolute;
+	top:20px;
+	width: 80px; 
+	height:80px; 
+	right:20px;
+	cursor: pointer;
+	background: url(/img/clear_large.svg) no-repeat scroll 0px 0px;
+	display:none;
+}
+
+#filter > .clearButton.show {
+	display:inline-block;
+}
+
+#filter > .tags {
+	color: #999;
+	cursor: default;
+	line-height: 22px;
+	margin-left:$margin;
+	margin-right:$margin;
+	height:calc(100% - #{$doubleMargin} - 80px - #{$margin});
+
+	overflow:hidden;
+	overflow-y: auto;
+	scrollbar-face-color: #b46868;
+
+}
+
+#filter ::-webkit-scrollbar {
+	width:  10px;
+	height: 10px;
+}
+
+#filter ::-webkit-scrollbar-thumb {
+	background: $lightMediumColor;
+}
+
+#filter ::-webkit-scrollbar-track {
+	background: $mediumDarkColor;
+}
+
+#filter > .tags > .tagText{
+	display:inline;
+	color: #e8e6f2;
+	cursor: default;
+	line-height: 22px;
+	white-space: nowrap;
+	cursor: pointer;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 100; 
+	@include responsiveFont(5vw, 16px, 32px, 12px);
+	letter-spacing: 1px;
+}
+
+#filter > .tags button{
+	display:inline;
+	color: #e8e6f2;
+	cursor: default;
+	line-height: 22px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	background-color:rgba(15, 15, 15, 0.2);
+	cursor: pointer;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	@include responsiveFont(2.8vw, 12px, 14px, 14px);
+	letter-spacing: 1px;
+	padding: 10px 20px 10px 20px;
+	border: 1px solid green;
+
+}
+
+#filter > .tags button:hover{
+	background-color: #000;
+}
+
+
+
+#filter.show {
+	display:block;
+}

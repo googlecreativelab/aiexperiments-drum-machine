@@ -1,0 +1,560 @@
+@import "responsiveFont";
+@import "inputRangeDefaults";
+@import "zoomControls";
+
+// colors
+
+$lightColor: #c2bfd9;
+$lightMediumColor: #3f3d52;
+$mediumColor: #2d2b3f;
+$mediumDarkColor: #262536;
+$darkColor: #1c1b28;
+$blackColor: #0F0F0F;
+
+// sizes
+$mediaPhonePortrait:320px;
+$mediaPhoneLandScape:520px;
+$mediaTabletPortrait:900px;
+$mediaTabletLandscape:1150px;
+
+@mixin iconStyle() {
+	pointer-events: none;
+	position: absolute;
+	fill:$lightColor;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	pointer-events: auto;
+}
+.stroke {
+	outline: none;
+}
+
+/* ------------------------------------------------ */
+/* CONTROLLER										*/
+/* ------------------------------------------------ */
+#controller {
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	height: auto;
+	display: none;
+}
+#controller.show {
+	display: inline-block;
+}
+
+#controller > .nav {
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 100;
+	letter-spacing: 1px;
+	color:#FFF;
+	@include responsiveFont(1vw, 10px, 10px, 10px);
+	background-color:$mediumColor;
+}
+
+#controller > .nav.hide {
+	// background-color: rgba(0, 0, 0, 0.0);
+	display:none;
+}
+
+#controller > .nav ::-webkit-scrollbar {
+	width:  10px;
+	height: 10px;
+}
+
+#controller > .nav ::-webkit-scrollbar-thumb {
+	background: $lightMediumColor;
+}
+
+#controller > .nav ::-webkit-scrollbar-track {
+	background: $mediumDarkColor;
+}
+
+body {
+	scrollbar-face-color: $darkColor;
+	scrollbar-track-color: $mediumDarkColor;
+}
+
+
+
+#controller > .nav > div {	
+	position:absolute;	
+}
+
+#controller > .nav > div.hide {
+	display: none !important;
+}
+
+/* ------------------------------------------------ */
+/* PRIMARY											*/
+/* ------------------------------------------------ */
+
+#controller > .nav > .player {
+	margin: 0px;
+	padding: 0px;
+}
+
+#controller > .nav > .player > .icon{
+	position:absolute;	
+	top:50%;
+	left:50%;
+	transform: translateX(-50%) translateY(-50%);
+	height: 60px;
+	width: 60px;
+	background: url(/img/play.svg);
+	cursor: pointer;
+	pointer-events: auto;
+}
+#controller > .nav > .player > .icon.pause {
+	background: url(/img/pause.svg);
+}
+
+#controller > .nav > .sequencer {
+	position:absolute;	
+	margin: 0px;
+	padding: 0px;
+
+	overflow:hidden;
+	overflow-x: auto;
+	white-space: nowrap;
+	scrollbar-face-color: #b46868;
+}
+
+#controller > .nav > .filter {
+	margin: 0px;
+	padding: 0px;
+	pointer-events: auto;
+}
+
+#controller > .nav > .filter > .stroke {
+	position:absolute;
+	height:40px;
+	line-height:40px;
+	width:calc(100% - 50px);
+	overflow:hidden;
+
+	border-radius: 4pt;
+	border:0px;
+	margin:0px;
+	color:$lightColor;
+
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
+    background-size: 34px 34px;
+	background-color: $mediumDarkColor;
+	@include responsiveFont(16px, 16px, 16px, 16px);
+
+}
+#controller > .nav > .filter > .stroke > .fill{
+	position: absolute;
+	border-radius: 3pt;
+	left:2px;
+	top:2px;
+	height:calc(100% - 4px);
+	width:calc(100% - 50px - 10px - 4px);
+	padding: 0px 10px 0px 50px;
+}
+
+#controller > .nav > .filter > .stroke > .clearIcon{
+	position: absolute;
+	display:none;
+	right:2px;
+	top:2px;
+	width:calc(40px);
+	height:calc(100% - 4px);
+	background: url(/img/filter_clear_small.svg) no-repeat scroll 0px 0px;
+	background-position: right center;
+
+	cursor: pointer;
+	pointer-events: auto;
+
+}
+
+
+#controller > .nav > #buttonsControls > .buttons {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: flex;
+	justify-content: space-around;
+}
+
+#controller > .nav > #buttonsControls > .buttons > button {
+	padding: 0px;
+	margin: 0px;
+	border:none;
+	height: 40px;
+	width: 40px;
+	min-width:50px;
+}
+
+#controller > .nav > .buttonsControls > .buttons > #previewIcon{
+	background-color:$mediumColor;
+}
+#controller > .nav > .buttonsControls > .buttons > #shuffleIcon{
+	background: url(/img/shuffle.svg);
+	background-size: 34px 34px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#controller > .nav > .buttonsControls > .buttons > #tempoIcon{
+	background: url(/img/tempo.svg);
+	background-size: 34px 34px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#controller > .nav > .buttonsControls > .buttons > #infoIcon{
+	background: url(/img/info.svg);
+	background-size: 34px 34px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#controller > .nav > .buttonsControls > .slider{
+	display: none;
+	position:absolute;
+	top: -190px;
+	left: 50%;
+	transform:  translateX(-50%);
+	width: 40px;
+	height: 190px + 40px;
+	background-color: $mediumDarkColor;
+	border-radius:4pt;
+	border: 2pt solid $lightMediumColor;
+    // z-index: -1;
+}
+#controller > .nav > .buttonsControls > .slider.show{
+	display: block;
+}
+$desktop_margin: 10px;
+$desktop_playerWidth: 140px;
+$desktop_sequencerWidth: 440px;
+$desktop_zoomWidth: 50px;
+$desktop_height: 100px;
+
+$desktop_calcA: $desktop_zoomWidth + $desktop_margin + $desktop_margin + $desktop_margin;
+$desktop_calcB: $desktop_playerWidth + $desktop_margin;
+$desktop_calcC: $desktop_calcA + $desktop_sequencerWidth + $desktop_playerWidth;
+$desktop_calcD: $desktop_calcB + $desktop_sequencerWidth;
+$desktop_calcE: $desktop_playerWidth + $desktop_margin;
+
+
+// desktop
+@media all {
+
+	#controller > .nav {
+		width: calc(100% - #{$desktop_calcA});
+		margin: $desktop_margin;
+		height:$desktop_height;
+	}
+
+	#controller > .nav > .player {
+		width:$desktop_playerWidth;
+		height:$desktop_height;
+		top:$desktop_margin;
+		left:calc((100% - #{$desktop_calcC}) / 2 + #{$desktop_margin}*4) ;
+	}
+
+	#controller > .nav > .filter {
+		width: calc((100% - #{$desktop_calcC}) / 2 + #{$desktop_margin}*3);
+		height: $desktop_height;
+		top:$desktop_margin;
+		left:$desktop_margin + $desktop_margin;
+		border-right: 2pt solid $blackColor;
+	}
+	#controller > .nav > .filter > .stroke {
+		top:30px;
+		left: 20px;
+	}
+	#controller > .nav > .sequencer {
+		width: $desktop_sequencerWidth;
+		height: $desktop_height;
+		top:$desktop_margin;
+		left:calc(	(100% - #{$desktop_calcC}) / 2 + #{$desktop_calcB} );
+	}
+
+	#controller > .nav > .buttonsControls {
+		width: calc((100% - #{$desktop_calcC}) / 2);
+		height: $desktop_height;
+		top:$desktop_margin;
+		left:calc(	(100% - #{$desktop_calcC}) / 2 + #{$desktop_calcD});
+		border-left: 2pt solid $blackColor;
+	}
+
+	#controller > .nav > #buttonsControls > .buttons > #previewIcon {
+		display:none;
+	}
+
+	#controller > .nav > .buttonsControls > .slider{
+		top: -160px;
+	}
+
+}
+
+$tablet_l_margin: 10px;
+$tablet_l_playerWidth: 140px;
+$tablet_l_sequencerWidth: 480px;
+$tablet_l_buttonSize: 30px;
+$tablet_l_height: 120px;
+
+$tablet_l_calcA: $tablet_l_margin + $tablet_l_margin;
+$tablet_l_calcB: $tablet_l_margin + $tablet_l_playerWidth + $tablet_l_sequencerWidth;
+$tablet_l_calcC: $tablet_l_calcB + $tablet_l_margin;
+
+@media (max-width:$mediaTabletLandscape) {
+
+	#controller > .nav {
+		width: calc(100% - #{$tablet_l_calcA});
+		margin: $tablet_l_margin;
+		height:$tablet_l_height;
+		display: flex;
+	}
+
+	#controller > .nav > .player {
+		width:$tablet_l_playerWidth;
+		height:$tablet_l_height;
+		top:$tablet_l_margin;
+		left:$tablet_l_margin;
+	}
+
+	#controller > .nav > .sequencer {
+		width: $tablet_l_sequencerWidth;
+		height: $tablet_l_height;
+		top:$tablet_l_margin;
+		left:$tablet_l_margin + $tablet_l_playerWidth;
+	}
+
+	#controller > .nav > .filter {
+		width: calc(100% - #{$tablet_l_calcC});
+		height: $tablet_l_height*0.5;
+		top:$tablet_l_margin;
+		left:$tablet_l_calcB;
+		border-right: none;
+	}
+	#controller > .nav > .filter > .stroke {
+		top:20px;
+	}
+	#controller > .nav > .buttonsControls {
+		width: calc(100% - #{$tablet_l_calcC});
+		height: $tablet_l_height*0.5;
+		top:$tablet_l_height*0.5 + $tablet_l_margin;
+		left:$tablet_l_calcB;
+		border-left: none;
+	}
+
+	#controller > .nav > #buttonsControls > .buttons > #previewIcon {
+		display:none;
+	}
+
+	#controller > .nav > .buttonsControls > .slider{
+		top: -180px;
+	}
+
+}
+
+
+$tablet_p_margin: 10px;
+$tablet_p_playerWidth: 140px;
+$tablet_p_height: 160px;
+$tablet_p_heightA: 60px;
+$tablet_p_heightB: 100px;
+
+$tablet_p_calcA: $tablet_p_playerWidth;
+$tablet_p_calcB: $tablet_p_margin + $tablet_p_margin;
+
+@media (max-width:$mediaTabletPortrait) {
+
+	#controller > .nav {
+		width: calc(100% - #{$tablet_p_calcB});
+		margin: $tablet_p_margin;
+		height:$tablet_p_height;
+	}
+
+	#controller > .nav > .player {
+		width:$tablet_p_playerWidth;
+		height:$tablet_p_heightB;
+		top:$tablet_p_margin + $tablet_p_heightA;
+		left:$tablet_p_margin;
+	}
+
+	#controller > .nav > .sequencer {
+		width: calc(100% - #{$tablet_p_calcA});
+		height: $tablet_p_heightB;
+		top:$tablet_p_margin + $tablet_p_heightA;
+		left:$tablet_p_playerWidth - 10px;
+	}
+
+	#controller > .nav > .filter {
+		width: calc(50% - #{$tablet_p_margin});
+		height: $tablet_p_heightA;
+		top:$tablet_p_margin;
+		left:$tablet_p_margin;
+	}
+
+	#controller > .nav > .buttonsControls {
+		width: calc(50% - #{$tablet_p_margin});
+		height: 40px;
+		top:$tablet_p_margin+20px;
+		left: 50%;
+	}
+
+	#controller > .nav > #buttonsControls > .buttons > #previewIcon {
+		display:none;
+	}
+
+	#controller > .nav > .buttonsControls > .slider{
+		top: -190px;
+	}
+}
+
+$mobile_p_margin: 10px;
+$mobile_p_playerWidth: 80px;
+$mobile_p_heightA: 60px;
+$mobile_p_heightB: 60px;
+$mobile_p_heightC: 120px;
+
+$mobile_p_calcA: $mobile_p_margin + $mobile_p_margin;
+$mobile_p_calcB: $mobile_p_heightA + $mobile_p_margin;
+$mobile_p_calcC: $mobile_p_margin + $mobile_p_playerWidth;
+$mobile_p_calcD: $mobile_p_margin + $mobile_p_margin;
+$mobile_p_calcE: $mobile_p_margin + $mobile_p_playerWidth + $mobile_p_margin;
+$mobile_p_calcF: $mobile_p_heightA + $mobile_p_heightB;
+$mobile_p_calcG: $mobile_p_heightA + $mobile_p_heightB + $mobile_p_heightC - $mobile_p_margin - $mobile_p_margin;
+
+
+@media (max-width:$mediaPhoneLandScape) {
+
+	#controller > .nav {
+		width: calc(100% - #{$mobile_p_calcA});
+		margin: $mobile_p_margin;
+		height: $mobile_p_heightA + $mobile_p_heightB;
+	}
+
+	#controller > .nav > .player {
+		width:$mobile_p_playerWidth;
+		height:$mobile_p_heightA;
+		top:$mobile_p_margin;
+		left:$mobile_p_margin;
+	}
+
+	#controller > .nav > .player > .icon{
+		position:absolute;	
+		top:20px;
+		left:50%;
+		transform: translateX(-50%);
+		height: 40px;
+		width: 40px;
+		background: url(/img/play_m.svg);
+	}
+	#controller > .nav > .player > .icon.pause {
+		background: url(/img/pause_m.svg);
+	}
+
+	#controller > .nav > .filter {
+		width: calc(100% - #{$mobile_p_calcE});
+		height: $mobile_p_heightA;
+		top:$mobile_p_margin;
+		left:$mobile_p_calcC;
+	}
+	#controller > .nav > .filter > .stroke {
+		width:calc(100% - 20px);
+		left: 0px;
+	}
+
+
+	#controller > .nav > .sequencer {
+		display:none;
+	}
+
+	#controller > .nav > .buttonsControls {
+		width: calc(100% - #{$mobile_p_calcD});
+		height: $mobile_p_heightB;
+		top:$mobile_p_calcB;
+		left:$mobile_p_margin;
+	}
+
+	#controller > .nav > #buttonsControls > .buttons > #previewIcon {
+		display:block;
+	}
+
+	#controller > .nav > .buttonsControls > .slider{
+		left: 62%;
+		transform:  translateX(-50%);
+		top: -180px;
+	}
+
+	#controller > .nav > .sequencer.expand {
+		display:block;
+		width: calc(100% - #{$mobile_p_calcA});
+		height:$mobile_p_heightC;
+		top:$mobile_p_calcF;
+		left:$mobile_p_margin;
+	}
+
+	#controller > .nav.expand {
+		height: $mobile_p_calcG + $mobile_p_margin;
+	}
+
+}
+
+@media (max-width:$mediaPhonePortrait) { 
+	.nav {
+		background-color:rgba(153, 153, 0, 0.25);
+	}
+}
+
+
+/* ------------------------------------------------ */
+/* SLIDER											*/
+/* ------------------------------------------------ */
+
+.sliderVertical {
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	overflow: visible;
+	z-index: 100;
+	pointer-events: auto;
+}
+
+.sliderShell {
+	border: 0 none;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+	background-color: rgba(0, 255, 0, 0.5);
+	height:190px;
+}
+
+.sliderTrack {
+	top: 10px;
+	left: 18px;
+	width: 4px;
+	height: 180px - 4px;
+	border: none;
+	border-radius: 4px;
+	position: absolute;
+	background-color: $darkColor;
+}
+
+.sliderThumb {
+	width: 20px;
+	height: 20px;
+	background-color: $lightColor;
+	border-radius: 50%;
+	position: absolute;
+	left: 10px;
+	top: 0px;
+	border: 0 none;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	pointer-events: none;
+}

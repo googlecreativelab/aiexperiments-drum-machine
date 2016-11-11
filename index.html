@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Infinite Drum Machine</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400' rel='stylesheet' type='text/css'>
+	<link type="text/css" href="./style/preload.css" rel="stylesheet"/>
+	<script type="text/javascript" src="https://www.youtube.com/player_api"></script>
+</head>
+<body>
+	<div id="drums">
+		<div id="visualizer"></div>
+		<div id="info">
+			<div class="label">
+				<div class="title">OVERLAY</div>
+				<div class="lineContainer"><div class="line"></div></div>
+			</div>
+			<div class="label">
+				<div class="title">OVERLAY</div>
+				<div class="lineContainer"><div class="line"></div></div>
+			</div>
+			<div class="label">
+				<div class="title">OVERLAY</div>
+				<div class="lineContainer"><div class="line"></div></div>
+			</div>
+			<div class="label">
+				<div class="title">OVERLAY</div>
+				<div class="lineContainer"><div class="line"></div></div>
+			</div>
+		</div>
+		<div id="controller">
+			<div id="zoom">
+				<button id="plusIcon"></button>
+				<button id="minusIcon"></button>
+			</div>
+			<div id="nav" class="nav">
+				<div id="player" class="player">
+					<div class="icon"></div>
+				</div>
+				<div id="sequencer" class="sequencer">
+					<div class="container"></div>
+				</div>
+				<div id="navFilter" class="filter">
+					<div class="stroke">
+						<div class="fill">FILTER</div>
+						<div class="clearIcon"></div>
+					</div>
+				</div>
+				<div id="buttonsControls" class="buttonsControls">
+					<div class="slider">
+						<div id="sliderShell">
+							<div class="sliderTrack" id="sliderTrack"></div>
+							<div class="sliderThumb" id="sliderThumb"></div>
+							<input class="sliderVertical" id="sliderData" type="range" min="0" max="100" value="0" orient="vertical" />
+						</div>
+					</div>
+					<div class="buttons">
+						<button id="previewIcon">
+							<svg id="sequencerCloseIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 40">
+								<style type="text/css">.st3{fill:#ff001e;}</style>
+								<rect x="14.8" y="19.1" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 56.8198 16.4645)" class="st3" width="20.4" height="1.7"/>
+								<rect x="14.8" y="19.1" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 28.5355 51.8198)" class="st3" width="20.4" height="1.7"/>
+							</svg>
+							<svg id="sequencerPreviewIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 40">
+								<rect class="previewTracks" x="14.8" y="11.5" width="20.4" height="1.7"/>
+								<rect class="previewTracks" x="14.8" y="16.6" width="20.4" height="1.7"/>
+								<rect class="previewTracks" x="14.8" y="21.7" width="20.4" height="1.7"/>
+								<rect class="previewTracks" x="14.8" y="26.8" width="20.4" height="1.7"/>
+							</svg>
+						</button>
+						<button id="shuffleIcon"></button>
+						<button id="tempoIcon">
+							<svg viewBox="0 0 50 40">
+							<style type="text/css">
+								.st0{fill:#2D2B3F;stroke:#C2BFD9;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+								.st1{fill:none;stroke:#C2BFD9;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+							</style>
+							<g id="pendulumWrapper"><g id="pendulum"><line class="st1" x1="0" y1="-14" x2="0" y2="0"/><circle class="st0" cx="0" cy="-17" r="3"/></circle></g></g>
+							</svg>
+						</button>
+						<button id="infoIcon"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="loader">
+		<div class="percentage">LOADING</div>		
+	</div>
+	<div id="cover"></div>
+
+	<div id="about" class="about" >
+		<div class="clearButton"></div>
+		<div class="container" class="description">
+			<h1>THE INFINITE DRUM MACHINE</h1>
+			<div class="videoContainer">
+				<div class="drumsVideo" id="drumsVideo"></div>
+				<img class="playButton" width="90" height="90" src="./img/play_icon_master.svg">
+				<img class="thumbnail" id="thumbnail" src="https://img.youtube.com/vi/YTR21os8gTA/0.jpg" width="600"/>
+			</div>
+			<p class="description">
+				Built by Kyle McDonald, Manny Tan, Yotam Mann, and friends at Google Creative Lab. Thanks to <a href="http://wiki.laptop.org/go/Free_sound_samples/" target="_blank">Berklee College of Music</a> and the <a href="http://www.philharmonia.co.uk/explore/make_music/" target="_blank">The Philharmonia Orchestra, London</a> for contributing some sounds to this project. The open-source code is available <a href="https://github.com/googlecreativelab/" target="_blank">here</a>.
+			</p>
+			<p class="description">
+				Check out more at <a href="https://aiexperiments.withgoogle.com/" target="_blank">A.I. Experiments</a>.
+			</p>
+		</div>
+	</div>
+
+	<div id="filter">
+		<div class="input-wrapper"></div>
+		<div class="searchButton"></div>
+		<div class="clearButton"></div>
+		<div class="tags"></div>
+	</div>
+	<div id="overlay">
+		<div class="backButton">
+			<svg class="icon" viewBox="-586 422 40 40"><polyline points="-566 423 -585 442 -566 461 "/><line x1="-585" y1="442" x2="-547" y2="442"/></svg>
+		</div>
+		<h1>SOUND DESCRIPTION</h1>
+		<div class="title">OVERLAY</div>
+		<h1>TAGS FOR THIS SOUND</h1>
+		<div class="tags"></div>
+	</div>
+	<div id="intro">
+		<div id="introBlock">
+			<div class="header">THE INFINITE DRUM MACHINE</div>
+			<p>Create beats using sounds from the everyday world.</p>
+			<div id="startLink" class="startLink"><span>START PLAYING</span></div><br>
+			<a href="#" id="aboutLink" class="aboutLink">ABOUT</a>
+		</div>
+		<div id="badges">
+			<div class="badgeAI" style="cursor: pointer;" onclick="window.open('https://aiexperiments.withgoogle.com', '_blank')"></div>
+			<div class="pipe"></div>
+			<div class="badgeFriends"></div>
+		</div>
+		<div id="legal">
+			<a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Privacy</a> &amp; <a href="https://www.google.com/intl/en/policies/terms/" target="_blank">Terms</a>
+		</div>
+	</div>
+	<div id="reorient">
+		<div class="container"><div class="rotatePhone"></div>Please rotate your phone to portrait mode.</div>
+	</div>
+	<div id="noGL">
+		<div class="container">Oops, sorry for the tech trouble. For the best experience, view in <a href="https://www.google.com/chrome" target="_blank">Chrome browser</a>.</div>
+	</div>
+	<script type="text/javascript" src="./build/Main.js"></script>
+</body>
+</html>

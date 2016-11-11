@@ -2,15 +2,17 @@
 
 THE INFINITE DRUM MACHINE
 
-...
 
 ## Installation
 
-Original audio files are not provided. Data must be formatted to run splitter.py. Data files will be generated in output/meta/ as json. See sample.json for reference. Audio files will be generated in output/audio as concatenated mp3 files. Both mp3 and json files are named according to load, "aka chunk" order.
+Original audio and tsne data are not provided. Please visit [AudioNotebooks](https://github.com/kylemcdonald/AudioNotebooks) to generate tsne data.
+
+Data must be formatted to run splitter.py. Data files will be generated in output/meta/ as json. See sample.json for reference. Audio files will be generated in output/audio as concatenated mp3 files. Both mp3 and json files are named according to load, "aka chunk" order.
 
 Install all npm modules required by package.json.
+Install webpack and webpack-dev-server.
 
-In terminal, run webpack-dev-server to run on localhost or webpack -p to build.
+In terminal, run webpack-dev-server to run on localhost:8080 or webpack -p to build.
 
 
 ## Contributors

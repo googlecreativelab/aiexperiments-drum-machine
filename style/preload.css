@@ -1,0 +1,6 @@
+/*
+Curated list used to hide quickly hide elements before they load
+*/
+#filter, #controller, #overlay, #info, #loader, #about, #zoomControls, #reorient, #trace, #intro, #noGL {
+	display:none;
+}

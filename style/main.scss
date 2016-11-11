@@ -1,0 +1,96 @@
+@import "responsiveFont";
+@import "about";
+@import "intro";
+
+body {
+	background-color: #000000;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#cover {
+	display:none;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(15, 15, 15, 0.8);
+}
+
+#cover.show {
+	display:block;
+}
+
+#drums {
+	display:block;
+	overflow: hidden;
+}
+
+/* fallbacks */
+
+#reorient {
+	display:none;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	background-color:#000;
+}
+
+#reorient.show {
+	display:block;
+}
+#reorient > .container {
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+	text-align: center;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size:16px;
+	color:#FFF;
+}
+
+#reorient > .container > .rotatePhone {
+	width: 180px;
+	height: 140px;
+	position:relative;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-bottom:40px;
+	background-image: url("/img/rotatePhone.svg");
+	background-repeat: no-repeat;
+}
+
+#noGL {
+	display:none;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	background-color:#000;
+}
+#noGL.show {
+	display:block;
+}
+
+#noGL > .container {
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+	text-align: center;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size:16px;
+	color:#FFF;
+}
+
+#noGL > .title > a {
+	color:#1cbf8a;
+}

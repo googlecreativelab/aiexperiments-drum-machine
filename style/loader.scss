@@ -1,0 +1,16 @@
+@import "responsiveFont";
+
+#loader {
+	position: absolute;
+	right: 30px;
+	top:30px;
+	color:#e8e6f2;
+	background-color: rgba(15, 15, 15, 0.8);
+	
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 10px;
+	letter-spacing: 2px;
+    text-align: right;
+	@include responsiveFont(0.8vw, 8px, 12px, 10px);
+	display:block;
+}

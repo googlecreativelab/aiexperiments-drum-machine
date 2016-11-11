@@ -1,0 +1,128 @@
+@import "responsiveFont";
+
+// color
+$lightColor: #c2bfd9;
+$lightMediumColor: #3f3d52;
+$mediumColor: #2d2b3f;
+$mediumDarkColor: #262536;
+$darkColor: #1c1b28;
+
+#about {
+	display:none;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(15, 15, 15, 0.8);
+	overflow: auto;
+}
+#about > .container > h1 {
+	color:#CCC;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size:20px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	position: relative;
+	min-width: 300px;
+	max-width: 580px;
+
+	padding: 10px;
+	margin-top:60px;
+	margin-bottom: 0px;
+
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+* ::-webkit-scrollbar {
+	width:  10px;
+	height: 10px;
+}
+
+* ::-webkit-scrollbar-thumb {
+	background: $lightMediumColor;
+}
+
+* ::-webkit-scrollbar-track {
+	background: $mediumDarkColor;
+}
+
+#about > .container > p {
+	padding: 0px 10px 30px 10px;
+	font-family: 'Roboto Mono', sans-serif;
+	color:#CCC;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 180%;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+#about > .container {
+	position: relative;
+	top:0px;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 300px;
+	max-width: 600px;
+}
+
+#about > .container > p > a {
+	color:#1babff;
+	text-decoration: none; 
+}
+
+#about > .clearButton {
+	position: absolute;
+	top:35px;
+	width: 20px; 
+	height: 20px; 
+	right:35px;
+	cursor: pointer;
+	background: url(/img/clear_about.svg) no-repeat scroll 0px 0px;
+}
+
+#about.show {
+	display:block;
+}
+
+#about > .container > .videoContainer {
+	overflow: hidden;
+	position: relative;
+	width: calc(100% - 20px);
+	padding-bottom: 56.25%;
+	float: left;
+	height: 0;
+	margin: 10px;
+	background-color:#060;
+	margin-top:20px;
+	margin-bottom:30px;
+}
+
+#about > .container > .videoContainer > .playButton{
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index:2;
+	cursor:pointer;
+}
+
+#about > .container > .videoContainer > .thumbnail{
+	width: 100%;
+	height: 133%;
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index:1;
+}
+
+#about > .container > .videoContainer > .drumsVideo{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
