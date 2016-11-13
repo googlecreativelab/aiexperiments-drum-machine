@@ -173,7 +173,6 @@ var Data = module.exports = {
 
 	generateEmptySuggestions: function () {
 		var hasProp;
-		var curatedWords = [{value:"ANIMAL"}, {value:"BEEP"}, {value:"BOING"}, {value:"COWBELL"}, {value:"DRIP"}, {value:"DRUM"}, {value:"DRUMSET"}, {value:"ELECTRONIC"}, {value:"FEEDBACK"}, {value:"FEMALEVOICE"}, {value:"FOLEY"}, {value:"HUMAN"}, {value:"LASER"}, {value:"MALEVOICE"}, {value:"PERCUSSION"}, {value:"POP"}, {value:"SCI"}, {value:"TALKIE"}, {value:"TELEPHONE"}, {value:"TURNTABLE"}, {value:"WALKIE"}, {value:"WALRUS"}, {value:"WHISTLE"}, {value:"WHISTLE"}, {value:"WOOD"}, {value:"XYLOPHONE"}, {value:"HOUSEHOLD"}, {value:"BOTTLE"}];
 
 		var allSuggestionsList = [];
 		var curatedSuggestionsList = [];
@@ -204,7 +203,7 @@ var Data = module.exports = {
 		};
 		
 		allSuggestionsList.sort(sortByNumber);
-		curatedSuggestionsList = allSuggestionsList.slice(0,100).concat(curatedWords);
+		curatedSuggestionsList = allSuggestionsList.slice(0,100);
 		curatedSuggestionsList.sort(sortByAlphabetical);
 
 		for(var i=0; i<(curatedSuggestionsList.length-1); i++){
