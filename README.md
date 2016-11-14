@@ -1,4 +1,7 @@
 ## The Infinite Drum Machine
+Thousands of everyday sounds, organized using machine learning.
+
+## About
 
 Sounds are complex and vary widely. This experiment uses machine learning to organize thousands of everyday sounds. The computer wasn’t given any descriptions or tags – only the audio. Using a technique called t-SNE, the computer placed similar sounds closer together. You can use the map to explore neighborhoods of similar sounds and even make beats using the drum sequencer.
 
