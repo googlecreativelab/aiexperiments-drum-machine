@@ -1,8 +1,16 @@
-This application is the visualizer and drum machine from [this site](https://aiexperiments.withgoogle.com/drum-machine). In this repo you will find all of the front-end code which visualizes, plays back and makes beats with the audio samples, though it does not contain any audio files or the t-SNE generated from those audio files. You can do that with your own samples by following some of the resources below. 
+## THE INFINITE DRUM MACHINE
+
+Sounds are complex and vary widely. This experiment uses machine learning to organize thousands of everyday sounds. The computer wasn’t given any descriptions or tags – only the audio. Using a technique called t-SNE, the computer placed similar sounds closer together. You can use the map to explore neighborhoods of similar sounds and even make beats using the drum sequencer.
+
+This is not an official Google product.
 
 ## CREDITS
 
 Built by Kyle McDonald, Manny Tan, Yotam Mann, and friends at Google Creative Lab. Thanks to [The Philharmonia Orchestra, London](http://www.philharmonia.co.uk/) for contributing some sounds to this project.
+
+## OVERVIEW
+
+This application is the visualizer and drum machine from [this site](https://aiexperiments.withgoogle.com/drum-machine). In this repo you will find all of the front-end code which visualizes, plays back and makes beats with the audio samples, though it does not contain any audio files or the t-SNE generated from those audio files. You can do that with your own samples by following some of the resources below. 
 
 ## INSTALLATION
 
