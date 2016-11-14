@@ -1,29 +1,29 @@
-## Synopsis
+This application is the visualizer and drum machine from [this site](https://aiexperiments.withgoogle.com/drum-machine). In this repo you will find all of the front-end code which visualizes, plays back and makes beats with the audio samples, though it does not contain any audio files or the t-SNE generated from those audio files. You can do that with your own samples by following some of the resources below. 
 
-THE INFINITE DRUM MACHINE
+## CREDITS
 
+Built by Kyle McDonald, Manny Tan, Yotam Mann, and friends at Google Creative Lab. Thanks to [The Philharmonia Orchestra, London](http://www.philharmonia.co.uk/) for contributing some sounds to this project.
 
-## Installation
+## INSTALLATION
 
-Original audio and tsne data are not provided. Please visit Kyle McDonald's [AudioNotebooks](https://github.com/kylemcdonald/AudioNotebooks) repo to generate tsne data.
+To build the client-side javascript, first install [node](https://nodejs.org) and [webpack](https://webpack.github.io/). Then you can install of the dependencies and build the files by typing the following in the terminal: 
 
-Data must be formatted to run splitter.py. Data files will be generated in output/meta/ as json. See sample.json for reference. Audio files will be generated in output/audio as concatenated mp3 files. Both mp3 and json files are named according to load, "aka chunk" order.
+```bash
+npm install
+webpack -p
+```
 
-Install all npm modules required by package.json.
-Install webpack and webpack-dev-server.
+## CREATING T-SNE MAP
 
-In terminal, run webpack-dev-server to run on localhost:8080 or webpack -p to build.
+If you have a large audio dataset, you can convert your sounds to t-SNE map using some of the python scripts found in Kyle McDonald's [AudioNotebooks](https://github.com/kylemcdonald/AudioNotebooks) repo. Our t-SNE was made by running the following scripts: 
 
+First we collect all of our audio files into a single numpy array using `Collect Samples.ipynb` and created one large wave file from all of the audio `Samples to Audio Spritesheet.ipynb`. Then we generated audio fingerprints and turn the fingerprints into a t-SNE map by running `Samples to Fingerprints.ipynb` and then `Fingerprint to t-SNE.ipynb`. 
 
-## Contributors
+The t-SNE data is put into two TSV files. One has all of the 2D coordinates, and the second has is the t-SNE but projected into 3D space instead of 2D. In our experiment use the 2D coordinates for the position on the map and the 3D coordinates for the color of the data point. 
 
-Built by [Kyle McDonald](https://github.com/kylemcdonald), [Manny Tan](https://github.com/mannytan), [Yotam Mann](https://github.com/tambien), and friends at [Google Creative Lab](https://github.com/googlecreativelab/). Thanks to [Berklee College of Music](http://wiki.laptop.org/go/Free_sound_samples/) and the [The Philharmonia Orchestra, London](http://www.philharmonia.co.uk/explore/make_music/) for contributing some sounds to this project. The open-source code is available [here](https://github.com/googlecreativelab/).
+In the `scripts` folder is some more scripts that we used for processing the audio and t-SNE data for our application. To make these sounds work better as a drum machine, we ran an analysis on all of the sounds comparing them to a traditional kick, snare, open and closed hihat using [librosa](https://github.com/librosa/librosa). You can see this script in `scripts/analysis.py`. This generates a TSV with values for the "distance" of each of our audio samples from these drum reference sounds. Using `scripts/sort_sounds.py`, you can create a JSON structure the most similar sounds to these reference sounds. This array is used for picking some random defaults when users first open the experiment and the `analysis.tsv` is used for sorting the rest of the sounds into the 4 drum parts when a user clicks the "random" button with a filter in the search box. 
 
-Check out more at [A.I. Experiments](https://aiexperiments.withgoogle.com/).
-
-## Note
-Third party directories may have different (non-Apache 2.0) licenses.
-
+To deploy our audio files and data in our experiment, we ran two additional step: first we separated our very large single wave file into many small mp3s to make loading faster and so that it was playable even if all of the sounds weren't loaded yet. And second we created matching JSON meta files for each of the audio chunks which included the position data, color data, analysis data and meta data (this is specific to our audio set which also included a lot of meta data tags). 
 
 ## License
 
