@@ -1,4 +1,4 @@
-## THE INFINITE DRUM MACHINE
+## The Infinite Drum Machine
 
 Sounds are complex and vary widely. This experiment uses machine learning to organize thousands of everyday sounds. The computer wasn’t given any descriptions or tags – only the audio. Using a technique called t-SNE, the computer placed similar sounds closer together. You can use the map to explore neighborhoods of similar sounds and even make beats using the drum sequencer.
 
@@ -6,15 +6,15 @@ Sounds are complex and vary widely. This experiment uses machine learning to org
 
 This is not an official Google product.
 
-## CREDITS
+## Credits
 
 Built by Kyle McDonald, Manny Tan, Yotam Mann, and friends at Google Creative Lab. Thanks to [The Philharmonia Orchestra, London](http://www.philharmonia.co.uk/) for contributing some sounds to this project.
 
-## OVERVIEW
+## Overview
 
 This application is the visualizer and drum machine from [this site](https://aiexperiments.withgoogle.com/drum-machine). In this repo you will find all of the front-end code which visualizes, plays back and makes beats with the audio samples, though it does not contain any audio files or the t-SNE generated from those audio files. You can do that with your own samples by following some of the resources below. 
 
-## INSTALLATION
+## Installation
 
 To build the client-side javascript, first install [node](https://nodejs.org) and [webpack](https://webpack.github.io/). Then you can install of the dependencies and build the files by typing the following in the terminal: 
 
@@ -23,7 +23,7 @@ npm install
 webpack -p
 ```
 
-## CREATING T-SNE MAP
+## Creating t-SNE Map
 
 If you have a large audio dataset, you can convert your sounds to t-SNE map using some of the python scripts found in Kyle McDonald's [AudioNotebooks](https://github.com/kylemcdonald/AudioNotebooks) repo. Our t-SNE was made by running the following scripts: 
 
