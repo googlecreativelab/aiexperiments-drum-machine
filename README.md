@@ -11,7 +11,7 @@ This is not an official Google product.
 
 ## Credits
 
-Built by [Kyle McDonald](https://github.com/kylemcdonald), [Manny Tan](https://github.com/mannytan), [Yotam Mann](https://github.com/tambien), and friends at [Google Creative Lab](https://github.com/googlecreativelab/). Thanks to [The Philharmonia Orchestra, London](http://www.philharmonia.co.uk/) for contributing some sounds to this project.
+Built by [Kyle McDonald](https://github.com/kylemcdonald), [Manny Tan](https://github.com/mannytan), [Yotam Mann](https://github.com/tambien), and friends at [Google Creative Lab](https://github.com/googlecreativelab/). Thanks to [The Philharmonia Orchestra, London](http://www.philharmonia.co.uk/) for contributing some sounds to this project. Check out more at [A.I. Experiments] (https://aiexperiments.withgoogle.com).
 
 ## Overview
 
