@@ -23,7 +23,7 @@ var RTree = require("rtree");
 var drumLike = require("../meta/drum_like.json");
 
 var Data = module.exports = {
-	videoId: 'YTR21os8gTA',
+	videoId: '9x-_My5yjQY',
 	totalChunks: Config.maxChunks,
 	player: new Player().toMaster(),
 	chunkIndexes: [],
