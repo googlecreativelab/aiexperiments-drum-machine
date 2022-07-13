@@ -12,24 +12,20 @@
 
 from pydub import AudioSegment
 import json
-import os
 import numpy
 import math
-import re
-from AudioNotebooks import config
+
 
 sounds = AudioSegment.from_wav("data/spritesheet.wav")
 
 with open('data/filenames.txt') as file_name_file:    
     file_names = file_name_file.read().split("\n")[:-1]
 
-seg_time = config.chunk_ms
 
+seg_time = 250
 num_samples = len(file_names)
 num_of_top_tags = 50
-
-
-num_chunks = config.chunks
+num_chunks = 4
 min_split_size = 150
 
 print(num_samples)
@@ -109,7 +105,7 @@ with open('data/name.tsv') as name_file:
 seg_start = 0
 
 for s in range(0, len(distribution)):
-# for s in range(0, 2):
+
     print('\nchunk : ', s)
 
     file_name = file_names[seg_start : (seg_start + distribution[s])]

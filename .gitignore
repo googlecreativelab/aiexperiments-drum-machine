@@ -40,3 +40,5 @@ build/Release
 .node_repl_history
 
 static/build/
+
+.idea/
